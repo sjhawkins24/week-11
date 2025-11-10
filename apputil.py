@@ -38,7 +38,7 @@ def kmeans_diamonds(n, k):
 def kmeans_timer(n, k, n_iter = 5):
     """Function to check the timing of the kmeans_diamond function"""
     t = []
-    for n in range(n_iter):
+    for i in range(n_iter):
         start = time()
         kmeans_diamonds(n, k)
         t.append(time() - start)

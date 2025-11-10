@@ -31,7 +31,7 @@ def kmeans_diamonds(n, k):
     #num_data = pd.DataFrame(data.iloc[:,[0, 4, 5, 6, 7, 8, 9] ])
  
     #Get the subset of the data
-    subset = pd.DataFrame(num_data.iloc[0:(n-1), :])
+    subset = pd.DataFrame(num_data.iloc[0:(n), :])
     
     return(kmeans(subset, k))
 

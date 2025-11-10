@@ -8,7 +8,7 @@ from time import time
 data = sns.load_dataset("diamonds")
 #Get the numerical columns 
 num_data = data.iloc[:,[0, 4, 5, 6, 7, 8, 9] ]
-
+ 
 
 def kmeans(X, k):
     """Wraper function for kmeans"""
@@ -25,9 +25,15 @@ def kmeans(X, k):
 
 def kmeans_diamonds(n, k):
     "Function to run kmeans on diamonds data"
+    #Load diamonds dataset 
+    #data = sns.load_dataset("diamonds")
+    #Get the numerical columns 
+    #num_data = pd.DataFrame(data.iloc[:,[0, 4, 5, 6, 7, 8, 9] ])
+ 
     #Get the subset of the data
-    subset = num_data.iloc[0:n, :]
-    kmeans(subset, k)
+    subset = pd.DataFrame(num_data.iloc[0:(n-1), :])
+    
+    return(kmeans(subset, k))
 
 def kmeans_timer(n, k, n_iter = 5):
     """Function to check the timing of the kmeans_diamond function"""
